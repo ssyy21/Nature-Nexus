@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+    <style>
+        /* Import Google font - Poppins */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .form-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-header {
+            margin-bottom: 20px;
+        }
+
+        .form-field {
+            margin-bottom: 20px;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .form-link {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .form-link a {
+            color: #7d2ae8;
+        }
+
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            background-color: #7d2ae8;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #6c5ce7;
+        }
+
+        .line {
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+
+        .media-options {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form">
+                <div class="form-header">
+                    <h2>Login</h2>
+                </div>
+                <form>
+                    <div class="form-field">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-field">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                    <button class="button">Login</button>
+                </form>
+            </div>
+
+            <div class="form signup-form">
+              <div class="form-header">
+                    <h2>Signup</h2>
+                </div>
+                <form>
+                    <div class="form-field">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-field">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-field">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                    <button class="button">Signup</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const loginForm = document.querySelector('.form.login-form');
+        const signupForm = document.querySelector('.form.signup-form');
+        const loginLink = document.querySelector('.login-link');
+        const signupLink = document.querySelector('.signup-link');
+
+        loginLink.addEventListener('click', () => {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+
+        signupLink.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

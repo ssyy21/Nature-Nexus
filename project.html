@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <div class="hero">
+        <video autoplay loop muted playsinline class="backvideo">
+            <source src="images/Coke Sustainability TVC.mp4" type="video/mp4">
+        </video>
+        <nav>
+            <img src="images/logotree.png" class="logo" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                
+                <li><a href="#Categories">Categories</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Search">Search</a></li>
+                <li><a href="#">Login/Sign Up</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>NatureNexus</h1>
+            <a href="#">Explore</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Awareness Page -->
+        <section  id="Categories" class="awareness-page">
+            <h2>Featured Categories</h2>
+            <div class="card-grid">
+                <a href="https://www.vogue.in/fashion/content/vogues-ultimate-guide-to-sustainable-fashion" class="card-link">
+                    <div class="card">
+                        <img src="images/shirt.jpg" alt="Image 1">
+                        <h3>Sustainable clothes</h3>
+                        <p>It is up to the manufacturers to offer quality, plastic-free clothes, but you can also make a difference as a consumer. We need to stop buying fast fashion. A new item might give you a brief feel-good moment, but after about five washes it can be trashed. If you wear it at all.</p>
+                    </div>
+                </a>
+                <a href="https://www.healthline.com/nutrition/what-is-organic-food" class="card-link">
+                    <div class="card">
+                        <img src="images/veggies.jpg" alt="Image 2">
+                        <h3>Organic Food</h3>
+                        <p>Organic farming is the production of food without the use of synthetic chemicals or genetically modified components. Organic foods are not necessarily completely chemical free, but the pesticide residues will be considerably lower than those found in produce manufactured with synthetic chemicals.</p>
+                    </div>
+                </a>
+                <a href="https://www.vogue.in/fashion/content/vogues-ultimate-guide-to-sustainable-fashion" class="card-link">
+                    <div class="card">
+                        <img src="images/goods.jpg" alt="Image 3">
+                        <h3>Sustainable home goods</h3>
+                        <p>Sustainable products are those that benefit society, the environment, and the economy over their entire lifecycle, from raw material extraction to final disposal, while also safeguarding human health and the environment.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <div id="Search" class="container">
+            <div class="header">
+              <h1>Frequently purchased products</h1>
+            </div>
+        
+            <div class="product-grid">
+              <div class="product-card">
+                <h2 class="product-title">Chickpeas</h2>
+                <p class="product-description">Chickpeas, also known as garbanzo beans, are a nutritious legume rich in protein and fiber.</p>
+                <img src="images/chick.jpg" alt="">
+                <a href="#" class="button">Add to cart</a>
+              </div>
+        
+              <div class="product-card">
+                <h2 class="product-title">Plants</h2>
+                <p class="product-description">Plants produce oxygen, provide food, and support ecosystems through photosynthesis.</p>
+                <img src="images/plant.jpg" alt="">
+                <a href="#" class="button">Add to cart</a>
+              </div>
+        
+              <div class="product-card">
+                <h2 class="product-title">Trousers</h2>
+                <p class="product-description">Sustainable trousers use eco-friendly materials, reducing environmental impact and waste.</p>
+              <img src="images/trouser.jpg" alt="">
+              <a href="#" class="button">Add to cart</a>
+            </div>
+            <div class="product-card">
+              <h2 class="product-title">Flour</h2>
+              <p class="product-description">It is a refined wheat flour used in Indian cuisine for making breads, sweets, pastries and snacks</p>
+              <img src="images/maida.jpg" alt="">
+              <a href="#" class="button">Add to cart</a>
+            </div>
+            <div class="product-card">
+              <h2 class="product-title">Capsicum</h2>
+              <p class="product-description">Capsicum, or bell pepper, is a nutritious, colorful, versatile vegetable. Rich in vitamin C</p>
+              <img src="images/bell.jpg" alt="">
+              <a href="#" class="button">Add to cart</a>
+            </div>
+            <div class="product-card">
+              <h2 class="product-title">Vegetable Oil</h2>
+              <p class="product-description">Vegetable oil is a plant-derived cooking oil used for frying, baking, and dressings.</p>
+              <img src="images/oil.jpg" alt="">
+              <a href="#" class="button">Add to cart</a>
+            </div>
+            <div class="product-card">
+              <h2 class="product-title">Tomato sauce</h2>
+              <p class="product-description">Organic tomato sauce is made from organically grown tomatoes used in dishes like pasta, pizzas</p>
+              <img src="images/tomar.jpg" alt="">
+              <a href="#" class="button">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+  
+
+        <!-- Impact Calculator Page
+        <section class="impact-calculator">
+            <h2>Calculate Your Impact</h2>
+            <form>
+                <label for="energy-usage">Energy Usage (kWh):</label>
+                <input type="number" id="energy-usage" name="energy-usage"><br><br>
+                <label for="water-usage">Water Usage (liters):</label>
+                <input type="number" id="water-usage" name="water-usage"><br><br>
+                <label for="waste-generation">Waste Generation (kg):</label>
+                <input type="number" id="waste-generation" name="waste-generation"><br><br>
+                <button>Calculate Impact</button>
+            </form>
+            <div class="impact-results">
+                <h3>Your Impact:</h3>
+                <p>CO2 Emissions: <span id="co2-emissions"></span></p>
+                <p>Water Saved: <span id="water-saved"></span></p>
+                <p>Waste Reduced: <span id="waste-reduced"></span></p>
+            </div>
+        </section> -->
+        <div class="impact">
+            <h2>Environmental Impact Calculator</h2>
+            <label for="product">Select Product:</label>
+            <select id="product">
+                <option value="shirt">Shirt</option>
+                <option value="phone">Smartphone</option>
+                <option value="fruit">Fruit (1 kg)</option>
+                <option value="vegetable">Vegetable (1 kg)</option>
+                <option value="pen">Pen</option>
+                <option value="notebook">Notebook</option>
+                <option value="eraser">Eraser</option>
+                <option value="pulses">Organic Pulses (1 kg)</option>
+                <option value="cereals">Cereals (1 kg)</option>
+                <option value="purse">Purse</option>
+                <option value="jeans">Jeans</option>
+                <option value="belt">Belt</option>
+                <option value="socks">Socks</option>
+                <option value="chips">Chips (1 pack)</option>
+            </select>
+            <br><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1">
+            <br><br>
+            <button onclick="calculateImpact()">Calculate Impact</button>
+            <div class="result" id="result"></div>
+        </div>
+    
+        <script>
+            // Define impact factors for various products
+            const impactFactors = {
+                'shirt': { 'carbon': 5, 'water': 2700 },
+                'phone': { 'carbon': 70, 'water': 9100 },
+                'fruit': { 'carbon': 0.3, 'water': 822 },
+                'vegetable': { 'carbon': 0.4, 'water': 322 },
+                'pen': { 'carbon': 0.02, 'water': 10 },
+                'notebook': { 'carbon': 0.5, 'water': 30 },
+                'eraser': { 'carbon': 0.01, 'water': 5 },
+                'pulses': { 'carbon': 2, 'water': 4050 },
+                'cereals': { 'carbon': 1.2, 'water': 1600 },
+                'purse': { 'carbon': 3, 'water': 1500 },
+                'jeans': { 'carbon': 33.4, 'water': 7600 },
+                'belt': { 'carbon': 1, 'water': 250 },
+                'socks': { 'carbon': 0.5, 'water': 60 },
+                'chips': { 'carbon': 2.5, 'water': 185 }
+            };
+    
+            function calculateImpact() {
+                const product = document.getElementById('product').value;
+                const quantity = document.getElementById('quantity').value;
+                const carbonImpact = impactFactors[product].carbon * quantity;
+                const waterImpact = impactFactors[product].water * quantity;
+    
+                document.getElementById('result').innerHTML = `
+                    <h3>Impact Results:</h3>
+                    <p>Carbon Footprint: ${carbonImpact} kg CO2</p>
+                    <p>Water Usage: ${waterImpact} liters</p>
+                `;
+            }
+        </script>
+
+        <!-- foote -->
+        <section class="hello">
+        <header>
+            <h1>NatureNexus Community</h1>
+            <p>Connecting Customers,partners and Teams together</p>
+        </header>
+        
+        
+        <main>
+            <div class="row">
+                <section id="product-qa" class="box col-6">
+                    <h2>Product Q&A</h2>
+                    <p>Find answers and ask Expert Users for advice</p>
+                </section>
+                <section id="user-tips" class="box col-6">
+                    <h2>User Tips</h2>
+                    <p>See tips from Users and Intercom Team</p>
+                </section>
+            </div>
+            <div class="row">
+                <section id="recently-online" class="box col-6">
+                    <h2>Recently Online</h2>
+                    <p>Recently Online</p>
+                </section>
+                <section id="product-wishlist" class="box col-6">
+                    <h2>Product Wishlist</h2>
+                    <p>Suggest ideas and share upvotes</p>
+                </section>
+            </div>
+            <div class="row">
+                <section id="groups" class="box col-6">
+                    <h2>Groups</h2>
+                    <p>Join a User Group and connect with peers</p>
+                </section>
+                <section id="events" class="box col-6 ">
+                    <h2>Events</h2>
+                    <p class="Community">Explore upcoming user events and trainings</p>
+                </section>
+            </div>
+            <div class="row">
+               
+            </div>
+        </section>
+
+            <!-- about -->
+            <section id="About"  class="about-us">
+                <div class="container">
+                  <h2>About Us</h2>
+                  <p>We're NatureNexus, a community-driven e-commerce platform dedicated to promoting sustainable living and reducing our impact on the environment.</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                     
+                    </div>
+                    <div class="col-md-6">
+                      <h3>Our Mission</h3>
+                      <p>We believe that everyone has the power to make a difference. That's why we're committed to providing high-quality, eco-friendly products that not only benefit our customers but also the planet.</p>
+                      <h3>Our Values</h3>
+                      <ul>
+                        <li><i class="fas fa-recycle"></i> Reduce, Reuse, Recycle</li>
+                        <li><i class="fas fa-leaf"></i> Sustainable Practices</li>
+                        <li><i class="fas fa-handshake"></i> Community Engagement</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h3>Meet Our Team</h3>
+                      <div class="team-members">
+                        <div class="team-member">
+                          
+                          <h4>Jane Doe</h4>
+                          <p>Founder & CEO</p>
+                        </div>
+                        <div class="team-member">
+                          
+                          <h4>John Smith</h4>
+                          <p>Sustainability Expert</p>
+                        </div>
+                        <div class="team-member">
+                          
+                          <h4>Emily Chen</h4>
+                          <p>Marketing Manager</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+                
+    </main>
+</body>
+</html>
