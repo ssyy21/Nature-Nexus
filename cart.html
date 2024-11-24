@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cart Page</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   <style>
+       body {
+           font-family: 'Roboto', sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #f0f4f8;
+       }
+
+       header {
+           background-color: #4CAF50;
+           color: #fff;
+           padding: 15px 0;
+           text-align: center;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       }
+
+       nav {
+           display: flex;
+           justify-content: center;
+           padding: 10px 0;
+           background-color: #f8f9fa;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       }
+
+       nav a {
+           color: #AED7CD;
+           text-decoration: none;
+           padding: 10px 20px;
+           transition: background-color 0.3s;
+       }
+
+       nav a:hover {
+           background-color: #e9ecef;
+           border-radius: 5px;
+       }
+
+       main {
+           display: flex;
+           justify-content: space-around;
+           padding: 30px;
+           max-width: 1200px;
+           margin: auto;
+       }
+
+       .cart-section {
+           width: 60%;
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       }
+
+       .cart-item {
+           display: flex;
+           align-items: center;
+           margin-bottom: 20px;
+           padding: 15px;
+           border-bottom: 1px solid #eaeaea;
+       }
+
+       .cart-item img {
+           width: 80px; /* Increased size */
+           height: 80px; /* Increased size */
+           margin-right: 20px;
+           border-radius: 5px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+       }
+
+       .cart-item-details {
+           flex: 1;
+       }
+
+       .cart-item-details h3 {
+           margin: 0;
+           font-size: 1.2em;
+           color: #333;
+       }
+
+       .cart-item-details p {
+           margin: 5px 0;
+           font-weight: bold;
+           color: #AED7CD;
+       }
+
+       .cart-item-actions {
+           display: flex;
+           align-items: center;
+       }
+
+       .quantity-control {
+           display: flex;
+           align-items: center;
+           margin-right: 20px;
+       }
+
+       .quantity-control button {
+           background-color: #AED7CD;
+           color: white;
+           border: none;
+           padding: 8px 12px;
+           cursor: pointer;
+           border-radius: 5px;
+           transition: background-color 0.3s;
+       }
+
+       .quantity-control button:hover {
+           background-color: #AED7CD;
+       }
+
+       .quantity-control input {
+           width: 40px;
+           text-align: center;
+           margin: 0 5px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           padding: 5px;
+       }
+
+       .remove-button {
+           background-color: #dc3545;
+           color: white;
+           border: none;
+           padding: 8px 12px;
+           cursor: pointer;
+           border-radius: 5px;
+           transition: background-color 0.3s;
+       }
+
+       .remove-button:hover {
+           background-color: #c82333;
+       }
+
+       .total-section {
+           width: 30%;
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           text-align: center;
+       }
+
+       .total-section h2 {
+           margin-bottom: 20px;
+           color: #333;
+       }
+
+       .checkout-button {
+           background-color: #317E58;;
+           color: white;
+           border: none;
+           padding: 12px;
+           cursor: pointer;
+           width: 100%;
+           border-radius: 5px;
+           transition: background-color 0.3s;
+       }
+
+       .checkout-button:hover {
+           background-color: #218838;
+       }
+   </style>
+   <script>
+       function updateTotal() {
+           const cartItems = document.querySelectorAll('.cart-item');
+           let total = 0;
+           cartItems.forEach(item => {
+               const price = parseFloat(item.querySelector('p').innerText.replace('$', ''));
+               const quantity = parseInt(item.querySelector('input').value);
+               total += price * quantity;
+           });
+           document.querySelector('.total-section h2').innerText = 'Total: $' + total.toFixed(2);
+       }
+
+       function increaseQuantity(input) {
+           input.value = parseInt(input.value) + 1;
+           updateTotal();
+       }
+
+       function decreaseQuantity(input) {
+           if (input.value > 1) {
+               input.value = parseInt(input.value) - 1;
+               updateTotal();
+           }
+       }
+
+       function proceedToCheckout() {
+           alert('Proceeding to checkout with total: ' + document.querySelector('.total-section h2').innerText);
+       }
+       
+   </script>
+   
+</head>
+<body>
+   <header>
+       <h1>Shopping Cart</h1>
+   </header>
+   <nav>
+       <a href="#">Home</a>
+       <a href="#">Products</a>
+       <a href="#">Contact</a>
+   </nav>
+   <main>
+       <div class="cart-section">
+           <div class="cart-item">
+               <img src="images/chick.jpg" alt="Item 1">
+               <div class="cart-item-details">
+                   <h3>Item 1</h3>
+                   <p>$10.00</p>
+               </div>
+               <div class="cart-item-actions">
+                   <div class="quantity-control">
+                       <button onclick="decreaseQuantity(this.nextElementSibling)">-</button>
+                       <input type="text" value="1">
+                       <button onclick="increaseQuantity(this.previousElementSibling)">+</button>
+                   </div>
+                   <button class="remove-button">Remove</button>
+               </div>
+           </div>
+           <div class="cart-item">
+            <img src="images/tomar.jpg" alt="Item 1">
+            <div class="cart-item-details">
+                <h3>Item 1</h3>
+                <p>$10.00</p>
+            </div>
+            <div class="cart-item-actions">
+                <div class="quantity-control">
+                    <button onclick="decreaseQuantity(this.nextElementSibling)">-</button>
+                    <input type="text" value="1">
+                    <button onclick="increaseQuantity(this.previousElementSibling)">+</button>
+                </div>
+                <button class="remove-button">Remove</button>
+            </div>
+        </div>
+           <div class="cart-item">
+               <img src="images/bell.jpg" alt="Item 2">
+               <div class="cart-item-details">
+                   <h3>Item 2</h3>
+                   <p>$15.00</p>
+               </div>
+               <div class="cart-item-actions">
+                   <div class="quantity-control">
+                       <button onclick="decreaseQuantity(this.nextElementSibling)">-</button>
+                       <input type="text" value="1">
+                       <button onclick="increaseQuantity(this.previousElementSibling)">+</button>
+                   </div>
+                   <button class="remove-button">Remove</button>
+               </div>
+           </div>
+       </div>
+       <br>
+       <br>
+       
+       
+       <div class="total-section">
+        <h2>Total: $25.00</h2>
+        <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+       <br>
+       <br>
+       <br>
+
+
+
+        
+        <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+            FREE delivery on orders above $500. Items in your Shopping Cart will always reflect the most recent price displayed on their product detail pages.
+            
+        </p>
+        <br>
+        
+        <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+            1]Shipping Timelines: Orders are processed within 1-2 business days and typically delivered within 5-7 business days.
+            
+            
+        </p>
+        <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+            2]Delays: Unexpected delays due to weather, holidays, or logistics issues are communicated promptly.
+        </p>
+    </div>
+    
+   </main>
+</body>
+</html>
